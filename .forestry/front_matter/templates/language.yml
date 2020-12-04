@@ -14,3 +14,5 @@ fields:
     min: 2
     max: 2
   label: Slug
+pages:
+- src/languages/fr.md
