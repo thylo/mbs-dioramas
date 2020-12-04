@@ -29,7 +29,7 @@ const dioramas = [
 
 dioramas.forEach(({items, lang})=>{
   items.forEach(item=>{
-    const fp = path.resolve(__dirname,'..', 'src', 'dioramas', `${item.slug}.${lang}.md`);
-    fs.writeFile(fp, YAML.stringify(item))
+    const fp = path.resolve(__dirname,'..', 'src', 'dioramas', `${item.slug}.${lang}.yml`);
+    fs.writeFileSync(fp, YAML.stringify({lang, ...item}))
   })
 })
