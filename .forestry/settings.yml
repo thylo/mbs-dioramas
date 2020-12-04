@@ -15,9 +15,13 @@ sections:
   - diorama
 - type: heading
   label: Globals
-- type: document
-  path: src/langs.md
+- type: directory
+  path: src/languages
   label: Languages
+  create: documents
+  match: "**/*"
+  templates:
+  - language
 upload_dir: src/images
 public_path: "/images"
 front_matter_path: ''
