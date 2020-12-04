@@ -4,6 +4,8 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: heading
+  label: Content
 - type: directory
   path: src/dioramas
   label: Dioramas
@@ -11,6 +13,12 @@ sections:
   match: "**/*"
   templates:
   - diorama
+- type: heading
+  label: Globals
+- type: document
+  path: src/languages.json
+  label: Languages
+  match: "**/*"
 upload_dir: src/images
 public_path: "/images"
 front_matter_path: ''
