@@ -32,9 +32,10 @@ fields:
   default: []
   config:
     required: true
-    options: []
+    options:
+    - en
     source:
-      type: pages
+      type: simple
       section: languages
       file: 
       path: 
