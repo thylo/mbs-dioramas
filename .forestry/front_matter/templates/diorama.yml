@@ -25,5 +25,17 @@ fields:
       section: 
       file: 
       path: 
-  label: slug
+  label: Slug
   description: Reference to one diorama
+- name: lang
+  type: select
+  default: []
+  config:
+    required: true
+    options: []
+    source:
+      type: pages
+      section: languages
+      file: 
+      path: 
+  label: Language
