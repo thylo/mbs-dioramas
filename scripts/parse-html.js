@@ -10,6 +10,7 @@ fs.readFile(path.resolve(__dirname,'marais.html'),'utf8', (err, content)=>{
   [...dom.window.document.querySelectorAll('.dio')].forEach((element,index)=>{
     const birds = []
     let birdBuffer = null;
+    let sectionBuffer = null;
     [...element.querySelectorAll('p')].forEach(e=>{
       if(e.querySelector('.c14.c6')){
         if (birdBuffer){
@@ -17,10 +18,22 @@ fs.readFile(path.resolve(__dirname,'marais.html'),'utf8', (err, content)=>{
           birdBuffer=null
         }
         birdBuffer = {
-          title : e.textContent
+          title : e.textContent,
+          sections: []
         }
       } else if (e.querySelector('.c17') || e.querySelector('.c26.c6.c19')){
         birdBuffer.latin = e.textContent
+      }else if(e.querySelector('.c5')){
+        if (sectionBuffer){
+          birdBuffer.sections.push(sectionBuffer);
+          sectionBuffer=null
+        }
+        sectionBuffer = {
+          title : e.textContent,
+          content:''
+        }
+      }else{
+        sectionBuffer.content += e.innerHTML
       }
     })
     console.log(birds);
