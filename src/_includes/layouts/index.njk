@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/index.scss">
+    <title>{{ title }}</title>
+</head>
+<body>
+<div class="l-page">
+    <div class="l-page__image c-big-image">
+        <img src="../assets/about.jpg" alt="">
+    </div>
+    <header class="c-hero l-page__hero">
+        <h1 class="c-page-title c-hero__title">
+            <a href="/" class="c-page-title__name">Aurélie Moreels</a>
+            <span class="c-page-title__instrument">Soprano</span>
+        </h1>
+    </header>
+
+    <div class="l-container l-about-section l-page__about c-about">
+        <div class="l-about-section__content">
+            <div>
+                {{ content | safe }}
+            </div>
+            <p>
+                <a href="" class="c-bio-link">Lire le CV complet</a>
+            </p>
+        </div>
+    </div>
+    </header>
+    <div class="l-container c-section l-page__agenda">
+        <h2 class="c-section-title">Agenda</h2>
+        <ul class="c-event-list">
+            {% for event in agenda %}
+                <li class="c-event-list__item c-event">
+                    <h3 class="c-event__title">{{ event.title }}</h3>
+                    <div class="c-event__date">{{ event.date }}</div>
+                    <div class="c-event__location">{{ event.location }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="l-container l-page__videos">
+        <h2 class="c-section-title">Vidéos</h2>
+        <div class="c-videos-list">
+            <ul class="c-videos-list__list">
+            {% for video in videos %}
+                <li class="c-videos-list__item c-video">
+                    <img class="c-video__img" src="https://img.youtube.com/vi/{{ video.youtube_id }}/0.jpg">
+                    <div class="c-video__icon">
+                        {% include "youtube.svg" %}
+                    </div>
+                    <h4>
+                        <a target="_blank"
+                           href="https://youtube.com/watch?v={{ video.youtube_id }}">{{ video.title }}</a>
+                    </h4>
+                    <p class="c-video__description">
+                        {{ video.description }}
+                    </p>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <footer class="c-footer l-page__footer">
+        <div class="c-footer__contact c-contact">
+            Aurélie Moreels <br>
+            0495/20.81.39 <br/>
+            <a href="mailto:info@aureliemoreels.be">info@aureliemoreels.be</a>
+        </div>
+        <div class="c-footer__colophon c-colophon">
+            Ce site web vise à réduire sa contribution à l'empreinte environnementale de l'industrie numérique. Par
+            conséquent, l'ensemble a été optimisé pour une consommation minimale de resources.
+        </div>
+    </footer>
+</div>
+
+
+</body>
+</html>
