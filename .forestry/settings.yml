@@ -16,9 +16,8 @@ sections:
 - type: heading
   label: Globals
 - type: document
-  path: src/languages.json
+  path: src/langs.md
   label: Languages
-  match: "**/*"
 upload_dir: src/images
 public_path: "/images"
 front_matter_path: ''
