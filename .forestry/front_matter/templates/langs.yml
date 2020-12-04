@@ -1,0 +1,14 @@
+---
+label: Langs
+hide_body: true
+fields:
+- name: name
+  type: text
+  config:
+    required: true
+  label: Name
+- name: slug
+  type: text
+  config:
+    required: true
+  label: slug
