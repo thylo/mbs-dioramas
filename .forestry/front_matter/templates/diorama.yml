@@ -8,3 +8,22 @@ fields:
     required: false
   label: Name
   description: Name of the the diorama
+- name: slug
+  type: select
+  default: fields
+  config:
+    required: true
+    options:
+    - fields
+    - cliffs
+    - dunes
+    - seaside
+    - mudflats
+    - swamp
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: slug
+  description: Reference to one diorama
