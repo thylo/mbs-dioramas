@@ -1,5 +1,5 @@
 {
-  "name": "aureliemoreels.be",
+  "name": "maison-baie-somme",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "prod:eleventy": "eleventy",
     "prod:parcel": "parcel build 11ty/*.html"
   },
-  "author": "",
+  "author": "Kascen",
   "license": "ISC",
   "dependencies": {
     "parcel-bundler": "^1.12.4",
