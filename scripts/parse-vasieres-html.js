@@ -22,8 +22,8 @@ fs.readFile(path.resolve(__dirname,'vasieres.html'),'utf8', (err, content)=>{
       const title = e.querySelector('.c1').textContent
       birdBuffer = {
         title,
-        slug : slugify(title, {remove:/'/}).toLowerCase(),
-        diorama: 'fields',
+        slug : `mudflats-${slugify(title, {remove:/'/}).toLowerCase()}`,
+        diorama: 'mudflats',
         lang:'fr',
         sections: []
       }
@@ -49,6 +49,7 @@ fs.readFile(path.resolve(__dirname,'vasieres.html'),'utf8', (err, content)=>{
     birdBuffer=null;
     sectionBuffer = null;
   }
+
   birds.forEach(bird=>{
     fs.writeFileSync(path.resolve(__dirname,'..', 'src', 'birds', `${bird.slug}.${bird.lang}.yml`),YAML.stringify(bird))
   })

@@ -21,7 +21,7 @@ fs.readFile(path.resolve(__dirname,'champs.html'),'utf8', (err, content)=>{
         const title = e.querySelector('.c1').textContent
         birdBuffer = {
           title,
-          slug : slugify(title, {remove:/'/}).toLowerCase(),
+          slug : `fields-${slugify(title, {remove:/'/}).toLowerCase()}`,
           diorama: 'fields',
           lang:'fr',
           sections: []

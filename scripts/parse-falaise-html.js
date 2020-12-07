@@ -21,7 +21,7 @@ fs.readFile(path.resolve(__dirname,'falaise.html'),'utf8', (err, content)=>{
       const title = e.querySelector('.c16').textContent
       birdBuffer = {
         title,
-        slug : slugify(title, {remove:/'/}).toLowerCase(),
+        slug : `cliffs-${slugify(title, {remove:/'/}).toLowerCase()}`,
         diorama: 'cliffs',
         lang:'fr',
         sections: []
