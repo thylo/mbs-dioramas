@@ -7,19 +7,19 @@ sections:
 - type: heading
   label: Content
 - type: directory
-  path: src/birds
-  label: Birds
-  create: documents
-  match: "**/*"
-  templates:
-  - bird
-- type: directory
   path: src/dioramas
   label: Dioramas
   create: documents
   match: "**/*"
   templates:
   - diorama
+- type: directory
+  path: src/birds
+  label: Birds
+  create: documents
+  match: "**/*"
+  templates:
+  - bird
 - type: heading
   label: Globals
 - type: directory
