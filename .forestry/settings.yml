@@ -7,6 +7,11 @@ sections:
 - type: heading
   label: Content
 - type: directory
+  path: src/birds
+  label: Birds
+  create: documents
+  match: "**/*"
+- type: directory
   path: src/dioramas
   label: Dioramas
   create: documents

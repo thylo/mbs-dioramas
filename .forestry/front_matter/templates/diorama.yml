@@ -40,5 +40,3 @@ fields:
       file: 
       path: 
   label: Language
-pages:
-- src/dioramas/fields.fr.md
