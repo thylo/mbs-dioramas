@@ -6,26 +6,26 @@ const slugify = require('slugify');
 
 fs.readFile(path.resolve(__dirname,'champs.html'),'utf8', (err, content)=>{
   const dom = new JSDOM(content);
-  [...dom.window.document.querySelectorAll('.dio')].forEach((element,index)=>{
+
     const birds = []
     let birdBuffer = null;
     let sectionBuffer = null;
-    [...element.querySelectorAll('p')].forEach(e=>{
-      if(e.querySelector('.c14.c6')){
+    [...dom.window.document.querySelectorAll('p.c6')].forEach(e=>{
+      if(e.querySelector('.c3.c4') && e.querySelector('.c1')){
         if (birdBuffer){
           birds.push(birdBuffer);
           birdBuffer=null
         }
+        const title = e.querySelector('.c1').textContent
         birdBuffer = {
-          title : e.textContent,
-          slug : slugify(e.textContent, {remove:/'/}).toLowerCase(),
+          title,
+          slug : slugify(title, {remove:/'/}).toLowerCase(),
           diorama: 'fields',
           lang:'fr',
           sections: []
         }
-      } else if (e.querySelector('.c17') || e.querySelector('.c26.c6.c19')){
-        birdBuffer.latin = e.textContent
-      }else if(e.querySelector('.c5')){
+        birdBuffer.latin = e.querySelector('.c3.c4').textContent
+      } else if(e.querySelector('.c1')){
         if (sectionBuffer){
           birdBuffer.sections.push(sectionBuffer);
           sectionBuffer=null
@@ -40,8 +40,10 @@ fs.readFile(path.resolve(__dirname,'champs.html'),'utf8', (err, content)=>{
         }
       }
     })
+    /*
     birds.forEach(bird=>{
       fs.writeFileSync(path.resolve(__dirname,'..', 'src', 'birds', `${bird.slug}.${bird.lang}.yml`),YAML.stringify(bird))
     })
-  })
+     */
+
 })
