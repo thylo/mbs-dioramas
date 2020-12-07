@@ -15,8 +15,10 @@ fs.readFile(path.resolve(__dirname,'marais.html'),'utf8', (err, content)=>{
     [...element.querySelectorAll('p')].forEach(e=>{
       if(e.querySelector('.c14.c6')){
         if (birdBuffer){
+          birdBuffer.sections.push(sectionBuffer);
           birds.push(birdBuffer);
           birdBuffer=null
+          sectionBuffer=null;
         }
         birdBuffer = {
           title : e.textContent,

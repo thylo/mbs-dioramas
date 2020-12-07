@@ -13,8 +13,10 @@ fs.readFile(path.resolve(__dirname,'champs.html'),'utf8', (err, content)=>{
     [...dom.window.document.querySelectorAll('p.c6')].forEach(e=>{
       if(e.querySelector('.c3.c4') && e.querySelector('.c1')){
         if (birdBuffer){
+          birdBuffer.sections.push(sectionBuffer);
           birds.push(birdBuffer);
-          birdBuffer=null
+          birdBuffer=null;
+          sectionBuffer = null;
         }
         const title = e.querySelector('.c1').textContent
         birdBuffer = {
@@ -40,10 +42,8 @@ fs.readFile(path.resolve(__dirname,'champs.html'),'utf8', (err, content)=>{
         }
       }
     })
-    /*
+
     birds.forEach(bird=>{
       fs.writeFileSync(path.resolve(__dirname,'..', 'src', 'birds', `${bird.slug}.${bird.lang}.yml`),YAML.stringify(bird))
     })
-     */
-
 })
