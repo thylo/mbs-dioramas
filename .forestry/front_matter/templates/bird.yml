@@ -5,6 +5,19 @@ fields:
 - type: text
   name: title
   label: title
+- name: lang
+  type: select
+  default: []
+  config:
+    required: true
+    options:
+    - fr
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: lang
 - type: text
   name: slug
   label: slug
@@ -26,9 +39,6 @@ fields:
       file: 
       path: 
   label: diorama
-- type: text
-  name: lang
-  label: lang
 - type: field_group_list
   name: sections
   label: sections
