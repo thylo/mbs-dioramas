@@ -30,7 +30,6 @@ fields:
   config:
     required: false
     options:
-    - mudlfats
     - fields
     - swamps
     - cliffs
@@ -38,7 +37,7 @@ fields:
     - dunes
     source:
       type: simple
-      section: 
+      section: dioramas
       file: 
       path: 
   label: diorama
