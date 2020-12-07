@@ -35,6 +35,7 @@ fields:
     - cliffs
     - seaside
     - dunes
+    - mudflats
     source:
       type: simple
       section: dioramas
