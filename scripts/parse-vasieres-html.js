@@ -4,30 +4,31 @@ const YAML = require("json-to-pretty-yaml");
 const { JSDOM } = require('jsdom');
 const slugify = require('slugify');
 
-fs.readFile(path.resolve(__dirname,'falaise.html'),'utf8', (err, content)=>{
+fs.readFile(path.resolve(__dirname,'vasieres.html'),'utf8', (err, content)=>{
   const dom = new JSDOM(content);
 
   const birds = []
   let birdBuffer = null;
   let sectionBuffer = null;
   [...dom.window.document.querySelectorAll('p')].forEach(e=>{
-    if(e.querySelector('.c16') && e.querySelector('.c12')){
+    if(!e.textContent)return;
+    if(e.querySelector('.c1') && e.querySelector('.c2.c5')){
       if (birdBuffer){
         birdBuffer.sections.push(sectionBuffer);
         birds.push(birdBuffer);
         birdBuffer=null;
         sectionBuffer = null;
       }
-      const title = e.querySelector('.c16').textContent
+      const title = e.querySelector('.c1').textContent
       birdBuffer = {
         title,
         slug : slugify(title, {remove:/'/}).toLowerCase(),
-        diorama: 'cliffs',
+        diorama: 'fields',
         lang:'fr',
         sections: []
       }
-      birdBuffer.latin = e.querySelector('.c12').textContent
-    } else if(e.classList.contains('h1')){
+      birdBuffer.latin = e.querySelector('.c2.c5').textContent
+    }else if(e.querySelector('.c1')){
       if (sectionBuffer){
         birdBuffer.sections.push(sectionBuffer);
         sectionBuffer=null
