@@ -44,6 +44,12 @@ fs.readFile(path.resolve(__dirname,'marais.html'),'utf8', (err, content)=>{
         }
       }
     })
+    if (birdBuffer){
+      birdBuffer.sections.push(sectionBuffer);
+      birds.push(birdBuffer);
+      birdBuffer=null;
+      sectionBuffer = null;
+    }
     birds.forEach(bird=>{
       fs.writeFileSync(path.resolve(__dirname,'..', 'src', 'birds', `${bird.slug}.${bird.lang}.yml`),YAML.stringify(bird))
     })
