@@ -11,6 +11,8 @@ sections:
   label: Birds
   create: documents
   match: "**/*"
+  templates:
+  - bird
 - type: directory
   path: src/dioramas
   label: Dioramas
