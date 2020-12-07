@@ -5,6 +5,9 @@ fields:
 - type: text
   name: title
   label: title
+- type: text
+  name: latin
+  label: latin
 - name: lang
   type: select
   default: []
@@ -49,6 +52,3 @@ fields:
   - type: textarea
     name: content
     label: content
-- type: text
-  name: latin
-  label: latin
