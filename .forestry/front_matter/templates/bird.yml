@@ -1,0 +1,29 @@
+---
+label: Bird
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: slug
+  label: slug
+- type: text
+  name: diorama
+  label: diorama
+- type: text
+  name: lang
+  label: lang
+- type: field_group_list
+  name: sections
+  label: sections
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: textarea
+    name: content
+    label: content
+- type: text
+  name: latin
+  label: latin
